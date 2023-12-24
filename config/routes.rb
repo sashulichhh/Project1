@@ -7,3 +7,4 @@ Rails.application.routes.draw do
   get 'settlements/:id' , to: 'settlements#show', as: :settlement
   root to: 'welcome#index'
 end
+
