@@ -8,6 +8,10 @@ class SettlementsController < ApplicationController
 	end
 
 	def new
+		@settlement = Settlement.new
+	end
+
+	def create
 	end
 
 	def edit
