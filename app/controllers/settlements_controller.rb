@@ -12,6 +12,8 @@ class SettlementsController < ApplicationController
 	end
 
 	def create
+		Settlement.create(name: params[:name], category: params[:category])
+		redirect_to action: :index
 	end
 
 	def edit
