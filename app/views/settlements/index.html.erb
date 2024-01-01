@@ -1,7 +1,7 @@
 <% @settlements.each do |settlement| %>
 <p><%= link_to settlement.name, settlement %> - <%= settlement.category %></p>
 <% end -%>
-<p><%= link_to "Добавить", 'settlements/new' %></p>
+<p><%= link_to "Добавить", new_settlement_path %></p>
 
 
 <% @settlements. to_a %>
