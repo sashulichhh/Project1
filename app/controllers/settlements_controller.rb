@@ -1,7 +1,7 @@
 class SettlementsController < ApplicationController
-	def index
+	def index 
 		@settlements = Settlement.all
-	end
+	end 
 
 	def show
 		@settlement = Settlement.find_by_id(params[:id])
@@ -12,7 +12,7 @@ class SettlementsController < ApplicationController
 	end
 
 	def create
-		Settlement.create(name: params[:name], category: params[:category])
+		@settlement = Settlement.create(name: params[:name], category: params[:category])
 		redirect_to '/settlements'
 	end
 
@@ -22,10 +22,14 @@ class SettlementsController < ApplicationController
 
 	def update
 		@settlement = Settlement.find_by_id(params[:id])
-		Settlement.update(name: params[:name], category: params[:category])
+		@settlement.update(name: params[:name],
+						 category: params[:category])
 		redirect_to settlement_path(@settlement)
 	end
 
 	def destroy
+		@settlement = Settlement.find_by_id(params[:id])
+		@settlement.destroy
+		redirect_to '/settlements'
 	end
 end

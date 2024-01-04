@@ -1,2 +1,3 @@
 <p><%= @settlement.name %> - <%= @settlement.category %></p>
 <%= link_to 'Редактировать', edit_settlement_path(@settlement) %>
+<%= button_to 'Удалить', settlement_path(@settlement), method: :delete %>
