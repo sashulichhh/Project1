@@ -1,6 +1,7 @@
 class SettlementsController < ApplicationController
 	def index 
 		@settlements = Settlement.all
+		@settles = SettleService.all
 	end 
 
 	def show
@@ -24,12 +25,12 @@ class SettlementsController < ApplicationController
 		@settlement = Settlement.find_by_id(params[:id])
 		@settlement.update(name: params[:name],
 						 category: params[:category])
-		redirect_to settlement_path(@settlement)
+		redirect_to (settlement_path(@settlement))
 	end
 
 	def destroy
 		@settlement = Settlement.find_by_id(params[:id])
 		@settlement.destroy
-		redirect_to '/settlements'
+		redirect_to ('/settlements')
 	end
 end

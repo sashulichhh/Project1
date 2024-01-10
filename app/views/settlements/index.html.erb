@@ -1,6 +1,8 @@
-<% @settlements.each do |settlement| %>
-<p><%= link_to settlement.name, settlement %> - <%= settlement.category %></p>
+<% @settles.each do |settlement| %>
+<p><%= settlement.name %> - <%= settlement.category %></p>
 <% end -%>
 <p><%= link_to "Добавить", settlement_new_path %></p>
 
-<% @settlements. to_a %>
+----------<br>
+
+<%= @settles %>
